@@ -1,3 +1,4 @@
+------------------------
 query getallusers{
   users{
     id
@@ -6,10 +7,46 @@ query getallusers{
     email
   }
 }
-
+------------------------
 query getallquotes{
   quotes{
     name
     by
+  }
+}
+
+---------------------------
+query getAllquotesofallusers{
+  users{
+    id
+    firstName
+    lastName
+    email
+    password
+    quotes{
+      name
+      by
+    }
+  }
+}
+
+---------------------------
+
+query getuserbyId{
+  user(id:"23131"){
+    id
+    firstName
+    lastName
+    
+  }
+}
+
+----------------------------
+
+query getquotebyuser{
+  quote(by:"23131"){
+   name
+ 	 by
+      
   }
 }
